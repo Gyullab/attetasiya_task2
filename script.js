@@ -15,4 +15,4 @@ class Messenger {
 }
 
 let messages=new Messenger()
-messages.send('miss gg','i am ded')
+messages.send('dasdasd','dsadasdasd')
