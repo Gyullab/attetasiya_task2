@@ -1,0 +1,1 @@
+1 class (icinde 2 funktion+1 constructor)
