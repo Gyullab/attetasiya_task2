@@ -1,18 +1,33 @@
-class Messenger {
-    constructor(author, text) {
-        this.author=author;
-        this.text=text;
+class Message {
+    constructor(authorName, time, text) {
+        this.authorName = authorName
+        this.time = time;
+        this.text = text;
     }
-  show_history() {
-    let zaman=new Date()
-    return `${zaman.getHours()}:${zaman.getMinutes()}`
-  }
-
-  send(author,text) {
-    console.log(this.show_history()+' '+author+': '+text)
-  }
-
+    toString() {
+        return this.time + ' ' + this.authorName + ': ' + this.text;
+    }
+}
+let messageHistory = []
+class Messenger {
+    send(name, mes) {
+        const time = new Date()
+        const current = time.getHours() + ":" + time.getMinutes();
+        const mesaj = new Message(name, current, mes)
+        const text = mesaj.toString()
+    
+        messageHistory.push(text);
+        console.log(text);
+    }
+    show_histroy() {
+    messageHistory.forEach((item) => {
+            console.log(item);
+        })
+    }
 }
 
-let messages=new Messenger()
-messages.send('dasdasd','dsadasdasd')
+let messenger = new Messenger();
+messenger.send('Test', 'Salam aleykum');
+messenger.send('Adam', 'Salam =)');
+
+// messenger.show_histroy();
